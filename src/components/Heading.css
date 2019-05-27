@@ -1,0 +1,52 @@
+.heading {
+    width: 80%;
+    height: 60px;
+    margin: 16px;
+}
+
+.heading > div {
+    width: 100%;
+}
+
+.heading a,
+.heading a:visited,
+.heading a:active {
+    color: #828282;
+    text-decoration: none;
+}
+
+.heading a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.heading-header {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.heading-header-empty {
+    display: inline-block;
+    width: 16px;
+}
+
+.heading-header-title {
+    margin: 0 6px;
+    color: #828282;
+    font-size: 13px;
+}
+
+.heading-header-sitestr,
+.heading-header-sitestr a {
+    color: #828282;
+    font-size: 13px;
+}
+
+.heading-sub-header {
+    display: flex;
+    margin-left: 24px;
+    color: #828282;
+    font-size: 12px;
+}

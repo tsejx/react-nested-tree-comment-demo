@@ -1,10 +1,13 @@
 {
-  "name": "react-comment",
-  "version": "0.1.0",
+  "name": "react-nested-tree-comment-demo",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
+    "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-perf-devtool": "^3.1.8",
     "react-scripts": "3.0.1"
   },
   "scripts": {
@@ -27,5 +30,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsejx/react-nested-tree-comment-demo.git"
   }
 }

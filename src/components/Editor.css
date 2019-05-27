@@ -1,0 +1,16 @@
+.editor{
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px;
+}
+
+.editor-textarea {
+    width: 600px;
+    height: 100px;
+}
+
+.editor-submit {
+    width: 100px;
+    height: 30px;
+    margin-top: 16px;
+}

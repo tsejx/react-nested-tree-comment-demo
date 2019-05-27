@@ -1,0 +1,115 @@
+{
+    "initialId": "t1_dasdkj",
+    "finalId": "t1_xjasdd",
+    "total": 9,
+    "comments": {
+      "t1_dasdkj": {
+        "id": "t1_dasdkj",
+        "author": "bcherny",
+        "createdTime": 1558967344351,
+        "vote": false,
+        "content": "You can create a derivative work and license that under Apache.",
+        "parentId": null,
+        "lastChildId": null,
+        "depth": 1,
+        "prevId": null,
+        "nextId": "t1_asdsds"
+      },
+      "t1_asdsds": {
+        "id": "t1_asdsds",
+        "author": "bcherny",
+        "createdTime": 1558967340351,
+        "vote": false,
+        "content": "Not if it uses copyrighted MIT licensed code.",
+        "parentId": null,
+        "lastChildId": null,
+        "depth": 1,
+        "prevId": "t1_dasdkj",
+        "nextId": "t1_asttqa"
+      },
+      "t1_asttqa": {
+        "id": "t1_asttqa",
+        "author": "bcherny",
+        "createdTime": 1558067344351,
+        "vote": false,
+        "content": "Ultimately the React ecosystem would benefit from the attempt.",
+        "parentId": null,
+        "lastChildId": null,
+        "depth": 1,
+        "prevId": "t1_asdsds",
+        "nextId": "t1_xjsk10"
+      },
+      "t1_xjsk10": {
+        "id": "t1_xjsk10",
+        "author": "bcherny",
+        "createdTime": 1558967044351,
+        "vote": false,
+        "content": "It does not revoke your license to use RN if you sue Facebook.",
+        "parentId": null,
+        "lastChildId": "t1_xjasdd",
+        "depth": 1,
+        "prevId": "t1_asttqa",
+        "nextId": "t1_xjska0"
+      },
+      "t1_xjska0": {
+        "id": "t1_xjska0",
+        "author": "bcherny",
+        "createdTime": 1558967344951,
+        "vote": false,
+        "content": "It's been renamed to 'umd' for clarity.",
+        "parentId": "t1_xjsk10",
+        "lastChildId": "t1_xjska9",
+        "depth": 2,
+        "prevId": "t1_xjsk10",
+        "nextId": "t1_xjska7"
+      },
+      "t1_xjska7": {
+        "id": "t1_xjska7",
+        "author": "bcherny",
+        "createdTime": 1528967344351,
+        "vote": false,
+        "content": "Since RN is using 16 for a while now, they already did, or am I wrong?",
+        "parentId": "t1_xjska0",
+        "lastChildId": null,
+        "depth": 3,
+        "prevId": "t1_xjska0",
+        "nextId": "t1_xjska8"
+      },
+      "t1_xjska8": {
+        "id": "t1_xjska8",
+        "author": "bcherny",
+        "createdTime": 1558967349351,
+        "vote": false,
+        "content": "Do RN projects just need to upgrade React then?",
+        "parentId": "t1_xjska0",
+        "lastChildId": null,
+        "depth": 3,
+        "prevId": "t1_xjska7",
+        "nextId": "t1_xjska9"
+      },
+      "t1_xjska9": {
+        "id": "t1_xjska9",
+        "author": "bcherny",
+        "createdTime": 1558967394351,
+        "vote": false,
+        "content": "OK",
+        "parentId": "t1_xjska0",
+        "lastChildId": null,
+        "depth": 3,
+        "prevId": "t1_xjska8",
+        "nextId": "t1_xjasdd"
+      },
+      "t1_xjasdd": {
+        "id": "t1_xjasdd",
+        "author": "bcherny",
+        "createdTime": 1568967344351,
+        "vote": false,
+        "content": "Yes.",
+        "parentId": "t1_xjsk10",
+        "lastChildId": null,
+        "depth": 2,
+        "prevId": "t1_xjska9",
+        "nextId": null
+      }
+    }
+  }

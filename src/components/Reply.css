@@ -1,0 +1,33 @@
+.reply {
+    flex-direction: column;
+    padding-left: 19px;
+}
+
+.reply-btn,
+.reply-submit,
+.reply-cancel {
+    display: inline;
+    font-size: 14px;
+    text-align: left;
+    color: rgba(0, 0, 0, .5);
+    font-size: 12px;
+}
+
+.reply-submit:hover,
+.reply-cancel:hover,
+.reply-btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.reply-textarea {
+    display: bolck;
+    width: 300px;
+    height: 100px;
+    margin-top: 8px;
+}
+
+.reply-submit {
+    margin-right: 8px;
+}
+

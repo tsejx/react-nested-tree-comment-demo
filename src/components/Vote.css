@@ -1,0 +1,18 @@
+.vote-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 10px;
+    line-height: 10px;
+    border-width:0 6px 8px;
+    border-style:solid;
+    border-color:transparent transparent #828282;
+    margin: 2px;
+    position:relative;
+    cursor: pointer;
+}
+
+.vote-empty {
+    display: inline-block;
+    width: 16px;
+}
