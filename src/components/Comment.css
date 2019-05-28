@@ -47,9 +47,7 @@
     text-align: left;
 }
 
-
-
-/* .comment-nested {
-    margin-left: 42px;
-} */
+.comment-noshow {
+    display: none;
+}
 

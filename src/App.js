@@ -130,6 +130,8 @@ export default class App extends React.Component {
     const { commentList } = this.state;
     const { comments } = commentList;
 
+    console.log(id)
+
     comments[id].collapsed = !comments[id].collapsed;
 
     const newData = Object.assign({}, commentList, {
@@ -168,7 +170,6 @@ export default class App extends React.Component {
 
     if (lastChilComment) {
       // 有子节点
-
       let expectDepth = parentComment.depth;
       let nextId = lastChilComment.nextId;
 
@@ -245,7 +246,6 @@ export default class App extends React.Component {
         }
       } else {
         // 最后子节点的下个节点为空
-
         const prevComment = lastChilComment;
         // 父节点
         parentComment.lastChildId = currentComment.id;
@@ -269,7 +269,6 @@ export default class App extends React.Component {
       }
     } else {
       // 无子节点
-
       if (parentComment.nextId && parentComment.id !== finalId) {
         // 不是最后评论
         // 上条评论指向（也就是父节点）
@@ -292,7 +291,6 @@ export default class App extends React.Component {
         );
       } else {
         // 是最后评论
-
         // 父节点指向新建评论
         parentComment.nextId = commentId;
         parentComment.lastChildId = currentComment.id;
@@ -332,8 +330,8 @@ export default class App extends React.Component {
     let nextId = null;
     let nextType = null;
 
-    // let collapsedId = null;
-    // let collapsedDepth = null;
+    let collapsedId = null;
+    let collapsedDepth = null;
 
     for (let i = 0; i < total; i++) {
 
@@ -341,6 +339,10 @@ export default class App extends React.Component {
         current = comments[nextId];
       } else {
         current = comments[initialId];
+      }
+
+      if (!collapsedDepth && current.collapsed){
+        collapsedDepth = current.depth;
       }
 
       // 当前评论数据
@@ -351,6 +353,8 @@ export default class App extends React.Component {
           author={current.author}
           content={<p>{current.content}</p>}
           isVoted={current.vote}
+          isCollapsed={current.collapsed}
+          isNoshow={collapsedDepth && current.depth > collapsedDepth}
           datetime={current.createdTime}
           depth={current.depth}
           // 点赞
@@ -364,10 +368,9 @@ export default class App extends React.Component {
 
       renderData.push(component);
 
-      // if (current.collapsed){
-      //   collapsedId = current.id;
-      //   collapsedDepth = current.depth;
-      // }
+      if (collapsedDepth && current.nextId && comments[current.nextId].depth <= collapsedDepth){
+        collapsedDepth = null;
+      }
 
       if (current.id === finalId) break;
 
