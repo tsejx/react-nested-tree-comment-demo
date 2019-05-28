@@ -5,7 +5,7 @@ import Reply from './Reply.js'
 import moment from 'moment'
 
 function Comment(props) {
-  const { commentId, isVoted, isCollapsed, author, content, datetime, children, depth, onVote, onReply, ...otherProps } = props;
+  const { commentId, isVoted, isCollapsed, author, content, datetime, children, depth, onVote, onReply, onCallapse, ...otherProps } = props;
 
   const cls = 'comment';
 
@@ -21,9 +21,9 @@ function Comment(props) {
         </>
       ) : null}
       {isCollapsed ? (
-        <span className={`${cls}-expand`}>[+]</span>
+        <span className={`${cls}-expand`} onClick={() => onCallapse(commentId)}>[+]</span>
       ) : (
-        <span className={`${cls}-collapsed`}>[-]</span>
+        <span className={`${cls}-collapsed`} onClick={() => onCallapse(commentId)}>[-]</span>
       )}
     </div>
   );

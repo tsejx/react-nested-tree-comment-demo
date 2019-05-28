@@ -13,7 +13,8 @@
         "lastChildId": null,
         "depth": 1,
         "prevId": null,
-        "nextId": "t1_asdsds"
+        "nextId": "t1_asdsds",
+        "collapsed": false
       },
       "t1_asdsds": {
         "id": "t1_asdsds",
@@ -25,7 +26,8 @@
         "lastChildId": null,
         "depth": 1,
         "prevId": "t1_dasdkj",
-        "nextId": "t1_asttqa"
+        "nextId": "t1_asttqa",
+        "collapsed": false
       },
       "t1_asttqa": {
         "id": "t1_asttqa",
@@ -37,7 +39,8 @@
         "lastChildId": null,
         "depth": 1,
         "prevId": "t1_asdsds",
-        "nextId": "t1_xjsk10"
+        "nextId": "t1_xjsk10",
+        "collapsed": false
       },
       "t1_xjsk10": {
         "id": "t1_xjsk10",
@@ -49,7 +52,8 @@
         "lastChildId": "t1_xjasdd",
         "depth": 1,
         "prevId": "t1_asttqa",
-        "nextId": "t1_xjska0"
+        "nextId": "t1_xjska0",
+        "collapsed": false
       },
       "t1_xjska0": {
         "id": "t1_xjska0",
@@ -61,7 +65,8 @@
         "lastChildId": "t1_xjska9",
         "depth": 2,
         "prevId": "t1_xjsk10",
-        "nextId": "t1_xjska7"
+        "nextId": "t1_xjska7",
+        "collapsed": false
       },
       "t1_xjska7": {
         "id": "t1_xjska7",
@@ -73,7 +78,8 @@
         "lastChildId": null,
         "depth": 3,
         "prevId": "t1_xjska0",
-        "nextId": "t1_xjska8"
+        "nextId": "t1_xjska8",
+        "collapsed": false
       },
       "t1_xjska8": {
         "id": "t1_xjska8",
@@ -85,7 +91,8 @@
         "lastChildId": null,
         "depth": 3,
         "prevId": "t1_xjska7",
-        "nextId": "t1_xjska9"
+        "nextId": "t1_xjska9",
+        "collapsed": false
       },
       "t1_xjska9": {
         "id": "t1_xjska9",
@@ -97,7 +104,8 @@
         "lastChildId": null,
         "depth": 3,
         "prevId": "t1_xjska8",
-        "nextId": "t1_xjasdd"
+        "nextId": "t1_xjasdd",
+        "collapsed": false
       },
       "t1_xjasdd": {
         "id": "t1_xjasdd",
@@ -109,7 +117,8 @@
         "lastChildId": null,
         "depth": 2,
         "prevId": "t1_xjska9",
-        "nextId": null
+        "nextId": null,
+        "collapsed": false
       }
     }
   }

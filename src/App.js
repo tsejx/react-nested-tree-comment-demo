@@ -86,6 +86,7 @@ export default class App extends React.Component {
       depth: 1,
       prevId: finalComment.id,
       nextId: null,
+      collapsed: false,
     };
 
     const newComments = Object.assign({}, comments, {
@@ -112,7 +113,6 @@ export default class App extends React.Component {
 
   handleCommentVote = id => {
     const { commentList } = this.state;
-
     const { comments } = commentList;
 
     comments[id].vote = !comments[id].vote;
@@ -126,7 +126,20 @@ export default class App extends React.Component {
     this.refreshDataList();
   };
 
-  handleCommentCollapse = () => {};
+  handleCommentCollapse = id => {
+    const { commentList } = this.state;
+    const { comments } = commentList;
+
+    comments[id].collapsed = !comments[id].collapsed;
+
+    const newData = Object.assign({}, commentList, {
+      comments,
+    });
+
+    localStorage.setItem('list', JSON.stringify(newData));
+
+    this.refreshDataList();
+  };
 
   handleCommentReply = (parentId, content) => {
     let newData = null;
@@ -319,7 +332,11 @@ export default class App extends React.Component {
     let nextId = null;
     let nextType = null;
 
+    // let collapsedId = null;
+    // let collapsedDepth = null;
+
     for (let i = 0; i < total; i++) {
+
       if (i > 0) {
         current = comments[nextId];
       } else {
@@ -339,13 +356,18 @@ export default class App extends React.Component {
           // 点赞
           onVote={this.handleCommentVote}
           // 折叠
-          onCallapse={() => this.handleCommentCollapse()}
+          onCallapse={this.handleCommentCollapse}
           // 回复
           onReply={this.handleCommentReply}
         />
       );
 
       renderData.push(component);
+
+      // if (current.collapsed){
+      //   collapsedId = current.id;
+      //   collapsedDepth = current.depth;
+      // }
 
       if (current.id === finalId) break;
 
