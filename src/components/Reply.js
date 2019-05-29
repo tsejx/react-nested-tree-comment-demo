@@ -2,31 +2,38 @@ import React from 'react';
 import './Reply.css';
 
 export default class Reply extends React.PureComponent {
-  state = {
-    inputValue: '',
-    isEditing: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: '',
+      isEditing: false,
+    };
+    this.toggleEditState = this.toggleEditState.bind(this);
+    this.onInputChange = this.onInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  toggleEditState = () => {
+  toggleEditState() {
     this.setState({ isEditing: !this.state.isEditing });
-  };
+  }
 
-  onInputChange = e => {
+  onInputChange(e) {
     this.setState({ inputValue: e.target.value });
-  };
+  }
 
-  handleSubmit = () => {
+  handleSubmit() {
     const { inputValue } = this.state;
-
+    if (!inputValue || !inputValue.trim()) {
+      alert('请输入评论内容');
+      return;
+    }
     this.props.onSubmit(inputValue);
-
     this.setState({ isEditing: false, inputValue: '' });
-  };
+  }
 
   render() {
-    const { inputValue, isEditing } = this.state;
-
     const cls = 'reply';
+    const { inputValue, isEditing } = this.state;
 
     return (
       <div className={`${cls}`}>

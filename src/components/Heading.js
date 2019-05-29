@@ -1,47 +1,97 @@
 import React, { PureComponent } from 'react';
 import './Heading.css';
-import Vote from './Vote.js'
+import Vote from './Vote.js';
 
 export default class Heading extends PureComponent {
+  state = {
+    newsDetail: {},
+  };
+
+  componentDidMount() {
+    this.refreshDataInfo();
+  }
+
+  refreshDataInfo = () => {
+    if (localStorage.getItem('info')) {
+      this.setState({ newsDetail: JSON.parse(localStorage.getItem('info')) });
+    } else {
+      window
+        .fetch('./info.json')
+        .then(res => res.json())
+        .then(data => {
+          localStorage.setItem('info', JSON.stringify(data));
+          this.setState({ newsDetail: data });
+        })
+        .catch(err => console.warn(err));
+    }
+  };
+
+  handleDetailVote = () => {
+    const { newsDetail } = this.state;
+
+    const newData = Object.assign({}, newsDetail, { isVoted: !newsDetail.isVoted });
+
+    this.setState({ newsDetail: { ...newsDetail, isVoted: !newsDetail.isVoted } });
+
+    localStorage.setItem('info', JSON.stringify(newData));
+  };
 
   render() {
+    const { newsDetail } = this.state;
 
-    const { data, onVote } = this.props
+    const { handleDetailVote } = this;
 
     const cls = 'heading';
 
     return (
       <div className={`${cls}`}>
         <div className={`${cls}-header`}>
+          <Vote
+            isVoted={newsDetail.isVoted}
+            style={{ display: 'inline-block' }}
+            onChange={handleDetailVote}
+          />
 
-          <Vote isVoted={data.isVoted} style={{display: 'inline-block'}} onChange={onVote} />
-
-          <div className={`${cls}-header-title`}>{data.header}</div>
+          <div className={`${cls}-header-title`}>{newsDetail.header}</div>
           <div className={`${cls}-header-sitestr`}>
-            (<a href={data.url}>{data.domain}</a>)
+            (<a href={newsDetail.url}>{newsDetail.domain}</a>)
           </div>
         </div>
         <div className={`${cls}-sub-header`}>
           <div>
-            {data.points} points by <a href="#">{data.author}</a>{' '}
-            <a href="#" style={{ marginRight: 6 }}>on {data.createdTime}</a>
+            {newsDetail.points} points by <a href="#user">{newsDetail.author}</a>{' '}
+            <a href="#time" style={{ marginRight: 6 }}>
+              on {newsDetail.createdTime}
+            </a>
           </div>
           {' | '}
-          {data.isVoted ? (
+          {newsDetail.isVoted ? (
             <>
-              <a href="#" style={{ margin: '0 6px' }} onClick={onVote}>unvote</a>
+              <a href="#unvote" style={{ margin: '0 6px' }} onClick={handleDetailVote}>
+                unvote
+              </a>
               {' | '}
             </>
           ) : null}
-          <a href="#" style={{ margin: '0 6px' }}>hide</a>
+          <a href="#hide" style={{ margin: '0 6px' }}>
+            hide
+          </a>
           {' | '}
-          <a href="#" style={{ margin: '0 6px' }}>past</a>
+          <a href="#past" style={{ margin: '0 6px' }}>
+            past
+          </a>
           {' | '}
-          <a href="#" style={{ margin: '0 6px' }}>web</a>
+          <a href="#web" style={{ margin: '0 6px' }}>
+            web
+          </a>
           {' | '}
-          <a href="#" style={{ margin: '0 6px' }}>favorite</a>
+          <a href="#favorite" style={{ margin: '0 6px' }}>
+            favorite
+          </a>
           {' | '}
-          <a href="#" style={{ margin: '0 6px' }}>{data.comments} comments</a>
+          <a href="#comments" style={{ margin: '0 6px' }}>
+            {newsDetail.comments} comments
+          </a>
         </div>
       </div>
     );

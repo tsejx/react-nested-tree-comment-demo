@@ -13,4 +13,13 @@
     width: 100px;
     height: 30px;
     margin-top: 16px;
+    border: 0;
+    border-radius: 5px;
+    color:#fff !important;
+    letter-spacing: 0.5px;
+    text-decoration:none;
+    outline: none;
+    background-color: #0092ba;/* for non linear-gradient browsers */
+    background: linear-gradient(to bottom, #24A1C3 5%, #0092BB 100%) repeat scroll 0 0 #24A1C3;
+    cursor: pointer;
 }

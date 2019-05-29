@@ -1,0 +1,9 @@
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 42px;
+    padding-bottom: 50px;
+    padding-left: 24px;
+  }
